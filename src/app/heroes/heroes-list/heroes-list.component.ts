@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {IHeroes} from '../heroes';
 
 @Component({
   selector: 'app-heroes-list',
@@ -15,34 +16,34 @@ export class HeroesListComponent {
   showImage():void{
     this.muestraImage=!this.muestraImage;
   }
-  heroes:any[]=[
+  heroes:IHeroes[]=[
     {
       imagen:"https://dragonball-api.com/characters/Krilin_Universo7.webp",
       nombre:"Krillin",
       description:'Es Krillin',
       race:"Human",
-      ki:"1,000,000"
+      ki:1000000
     },
     {
       imagen:"https://dragonball-api.com/characters/goku_normal.webp",
       nombre:"Goku",
       description:'Es Goku',
       race:"Saiyan",
-      ki:"60.000.000"
+      ki:60000000
     },
     {
       imagen:"https://dragonball-api.com/characters/Jiren.webp",
       nombre:"Jiren",
       description:'Es Jiren',
       race:"Grises",
-      ki:"121 Quintillion"
+      ki:121000000
     },
     {
       imagen:"https://dragonball-api.com/transformaciones/Broly_DBS_Base.webp",
       nombre:"Broly",
       description:'Es Broly',
       race:"Saiyan",
-      ki:"7 quadrillion"
+      ki:7000000
     }
   ]
 
