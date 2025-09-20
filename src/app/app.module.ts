@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
 import { FormsModule } from '@angular/forms';
 import { HeroFilterPipe } from './heroes/hero-filter.pipe';
+import { OperasBasComponent } from './formularios/operas-bas/operas-bas.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesListComponent,
-    HeroFilterPipe
+    HeroFilterPipe,
+    OperasBasComponent
   ],
   imports: [
     BrowserModule,
