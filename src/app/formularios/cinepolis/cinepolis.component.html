@@ -1,0 +1,50 @@
+<div class="cinepolis-container">
+  <div class="header">
+    <h3>CINEPOLIS</h3>
+    <h3>La Capital del Cine</h3>
+    <h3>----------------------------</h3>
+  </div>
+
+  <div class="form-container">
+    <div class="inicio">
+      <h3>Adquiere tus entradas</h3>
+      <div class="form-group">
+        <label>Nombre:</label><br>
+        <input type="text" [(ngModel)]="comprador">
+      </div><br>
+      <div class="form-group">
+        <label>Compradores:</label><br>
+        <input type="number" [(ngModel)]="cantidadCompradores" 
+        min="1">
+      </div><br>
+      <div class="form-group">
+        <label>¿Ya adquiriste tu Tarjeta Cineco?</label><br>
+        <input type="radio" name="tarjeta" [value]="true" 
+        [(ngModel)]="tarjetaCineco"> <label>Sí</label><br>
+        <input type="radio" name="tarjeta" [value]="false" 
+        [(ngModel)]="tarjetaCineco"> <label>No</label>
+      </div><br>
+      <div class="form-group">
+        <label>Boletos adquiridos:</label><br>
+        <input type="number" [(ngModel)]="cantidadBoletos" min="1" 
+        [max]="maxBoletos">
+      </div>
+    </div>
+
+    <h3>----------------------------</h3>
+
+    <div class="salidas">
+      <h3>Tu orden</h3>
+      <div class="resultado-box">
+        <p [innerHTML]="resultado"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acciones">
+    <button class="btn btn-primary" 
+    (click)="procesarCompra()">Procesar</button><br><br>
+    <button class="btn btn-primary" 
+    (click)="salir()">Salir</button>
+  </div>
+</div>

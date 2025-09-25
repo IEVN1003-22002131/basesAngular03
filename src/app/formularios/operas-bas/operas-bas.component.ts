@@ -14,10 +14,13 @@ calcular(operaciones: string): void {
     switch (operaciones) {
       case 'suma':
         this.resultado=parseInt(this.num1)+parseInt(this.num2);
+        break;
       case 'resta':
         this.resultado=parseInt(this.num1)-parseInt(this.num2);
+        break;
       case 'multiplicacion':
         this.resultado=parseInt(this.num1)*parseInt(this.num2);
+      break;
       case 'division':
         this.resultado=parseInt(this.num1)/parseInt(this.num2);
       break;
