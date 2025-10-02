@@ -1,0 +1,69 @@
+<div class="contenedor">
+  <h1>Resistencias</h1>
+
+  <div class="selectores">
+    <div class="band-selector">
+      <div class="header">1ra. Banda</div>
+      <div *ngFor="let color of coloresBandas" class="radio-option">
+        <input type="radio" name="banda1" [value]="color.nombre" [(ngModel)]="banda1">
+        <span class="color-swatch" [style.background-color]="color.nombre"></span>
+        <label>{{ color.valor }}</label>
+      </div>
+    </div>
+
+    <div class="band-selector">
+      <div class="header">2da. Banda</div>
+      <div *ngFor="let color of coloresBandas" class="radio-option">
+        <input type="radio" name="banda2" [value]="color.nombre" [(ngModel)]="banda2">
+        <span class="color-swatch" [style.background-color]="color.nombre"></span>
+        <label>{{ color.valor }}</label>
+      </div>
+    </div>
+
+    <div class="band-selector">
+      <div class="header">Multiplicador</div>
+      <div *ngFor="let color of coloresMultiplicador" class="radio-option">
+        <input type="radio" name="multiplicador" [value]="color.nombre" [(ngModel)]="multiplicador">
+        <span class="color-swatch" [style.background-color]="color.nombre"></span>
+        <label>{{ color.valor }}</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="tolerance-selector">
+    <div *ngFor="let tol of coloresTolerancia" class="radio-option-tolerance">
+      <input type="radio" name="tolerancia" [value]="tol.nombre" [(ngModel)]="tolerancia">
+      <span class="color-swatch" [style.background-color]="tol.nombre"></span>
+      <label>{{ tol.texto }}</label>
+    </div>
+  </div>
+
+  <button (click)="calcular()">Calcular</button>
+
+  <div *ngIf="resultado" class="results-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Color 1</th>
+          <th>Color 2</th>
+          <th>Color 3</th>
+          <th>Tolerancia</th>
+          <th>Valor</th>
+          <th>Valor máximo</th>
+          <th>Valor mínimo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td [style.background-color]="res1">{{ res1 | titlecase}}</td>
+          <td [style.background-color]="res2">{{ res2 | titlecase}}</td>
+          <td [style.background-color]="res3">{{ res3 | titlecase}}</td>
+          <td [style.background-color]="tolerancia">{{ toleranciaRes }}</td>
+          <td>{{ valorRes }}</td>
+          <td>{{ maxRes }}</td>
+          <td>{{ minRes }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
